@@ -62,7 +62,7 @@ def search_terms
       if current_word == current_hash.keys[i]
         puts 'The definition of ' + current_word + ' is:'
         puts current_hash.values
-        puts 'Press D to delete the entry, and E for edit'
+        puts 'Press D to delete the entry, A to add a definition, and E to edit a definition'
         delete_entry = gets.chomp.upcase
         case delete_entry
         when "D"
@@ -73,6 +73,10 @@ def search_terms
           puts "What would you like the new definition to be?"
           new_def = gets.chomp
           current_object.edit(new_def)
+        when 'A'
+          puts "Add another definition"
+          add_def2 = gets.chomp
+          current_object.add_def(add_def2)
         else
           main_menu
         end

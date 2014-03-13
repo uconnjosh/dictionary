@@ -9,10 +9,17 @@ class Term
   end
 
   def initialize(word, definition)
+    @definitions = []
     @word = word
-    @definition = definition
-    @term = {word => definition}
+    @definitions << definition
+    @term = {word => definitions}
 
+  end
+
+  def add_def(additional_def)
+    @term[@word] << additional_def
+    #@word << additional_def
+    #@term = {@word => [@definitions, @definition]}
   end
 
   def delete
@@ -42,7 +49,7 @@ class Term
     @term
   end
 
-def definition
-  @definition
+def definitions
+  @definitions
   end
 end

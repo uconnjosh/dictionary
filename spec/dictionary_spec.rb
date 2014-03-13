@@ -61,6 +61,14 @@ describe Term do
       test_term.term.should eq test_term.term
     end
   end
+  describe '#add_def' do
+    it 'should add a new definition the a previously initialized term' do
+      test_term = Term.new('snake', 'a deadly killer')
+      test_term.save
+      test_term.add_def('An often misunderstood, friendly animal. You should cuddle with them')
+      test_term.term.should eq ({'snake' => ['a deadly killer', 'An often misunderstood, friendly animal. You should cuddle with them']})
+    end
+  end
 end
 
 

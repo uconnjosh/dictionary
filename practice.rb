@@ -1,4 +1,5 @@
-terms = ["cats", "dogs", "deer"]
-terms.each do |animal|
-  puts animal
-end
+animals = {"dogs" => "canine", "cats" => "feline"}
+puts animals['dogs']
+animals['dogs'] << ' fury '
+puts animals
+
